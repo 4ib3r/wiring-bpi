@@ -7,8 +7,8 @@ NODE_MODULE_INIT() {
   #endif
   INIT(wiringPi);
   INIT(softPwm);
-  INIT(softServo);
-  INIT(softTone);
+  //INIT(softServo);
+  //INIT(softTone);
   INIT(wiringPiI2C);
   INIT(wiringPiSPI);
   INIT(wiringSerial);

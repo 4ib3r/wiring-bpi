@@ -18,7 +18,7 @@ DECLARE(digitalWrite);
 DECLARE(pwmWrite);
 DECLARE(analogRead);
 DECLARE(analogWrite);
-DECLARE(pulseIn);
+//DECLARE(pulseIn);
 
 DECLARE(delay);
 DECLARE(delayMicroseconds);
@@ -27,12 +27,12 @@ DECLARE(micros);
 
 // On-Board Rasberry Pi hardware specific stuff
 DECLARE(piBoardRev);
-DECLARE(piBoardId);
+//DECLARE(piBoardId);
 DECLARE(wpiPinToGpio);
 DECLARE(physPinToGpio);
 DECLARE(setPadDrive);
 DECLARE(getAlt);
-DECLARE(pwmToneWrite);
+//DECLARE(pwmToneWrite);
 DECLARE(digitalWriteByte);
 DECLARE(pwmSetMode);
 DECLARE(pwmSetRange);
@@ -200,7 +200,7 @@ IMPLEMENT(pinMode) {
   int pin = GET_ARGUMENT_AS_INT32(0);
   int mode = GET_ARGUMENT_AS_INT32(1);
 
-  CHECK_ARGUMENT_IN_INTS(1, mode, (INPUT, OUTPUT, PWM_OUTPUT, GPIO_CLOCK, SOFT_PWM_OUTPUT, SOFT_TONE_OUTPUT));
+  CHECK_ARGUMENT_IN_INTS(1, mode, (INPUT, OUTPUT, PWM_OUTPUT, GPIO_CLOCK, SOFT_PWM_OUTPUT));
 
   ::pinMode(pin, mode);
 
@@ -347,7 +347,7 @@ IMPLEMENT(analogWrite) {
   SCOPE_CLOSE(UNDEFINED());
 }
 
-IMPLEMENT(pulseIn) {
+/*IMPLEMENT(pulseIn) {
   SCOPE_OPEN();
 
   SET_ARGUMENT_NAME(0, pin);
@@ -366,7 +366,7 @@ IMPLEMENT(pulseIn) {
   int us = ::pulseIn(pin, state);
 
   SCOPE_CLOSE(INT32(us));
-}
+}*/
 
 IMPLEMENT(delay) {
   SCOPE_OPEN();
@@ -437,7 +437,7 @@ IMPLEMENT(piBoardRev) {
   SCOPE_CLOSE(INT32(res));
 }
 
-IMPLEMENT(piBoardId) {
+/*IMPLEMENT(piBoardId) {
   SCOPE_OPEN();
 
   CHECK_ARGUMENTS_LENGTH_EQUAL(0);
@@ -466,7 +466,7 @@ IMPLEMENT(piBoardId) {
   #endif
 
   SCOPE_CLOSE(obj);
-}
+}*/
 
 // Func : int wpiPinToGpio(int wpiPin)
 // Description : This returns the BCM_GPIO pin number of the supplied wiringPi pin.
@@ -548,7 +548,7 @@ IMPLEMENT(getAlt) {
   SCOPE_CLOSE(INT32(res));
 }
 
-IMPLEMENT(pwmToneWrite) {
+/*IMPLEMENT(pwmToneWrite) {
   SCOPE_OPEN();
 
   SET_ARGUMENT_NAME(0, pin);
@@ -565,7 +565,7 @@ IMPLEMENT(pwmToneWrite) {
   ::pwmToneWrite(pin, frequency);
 
   SCOPE_CLOSE(UNDEFINED());
-}
+}*/
 
 // Func : void digitalWriteByte(int value)
 // Description : This writes the 8-bit byte supplied to the first 8 GPIO pins.
@@ -689,7 +689,7 @@ IMPLEMENT_EXPORT_INIT(wiringPi) {
   EXPORT_FUNCTION(pwmWrite);
   EXPORT_FUNCTION(analogRead);
   EXPORT_FUNCTION(analogWrite);
-  EXPORT_FUNCTION(pulseIn);
+  //EXPORT_FUNCTION(pulseIn);
 
   EXPORT_FUNCTION(delay);
   EXPORT_FUNCTION(delayMicroseconds);
@@ -698,12 +698,12 @@ IMPLEMENT_EXPORT_INIT(wiringPi) {
 
   // On-Board Rasberry Pi hardware specific stuff
   EXPORT_FUNCTION(piBoardRev);
-  EXPORT_FUNCTION(piBoardId);
+  //EXPORT_FUNCTION(piBoardId);
   EXPORT_FUNCTION(wpiPinToGpio);
   EXPORT_FUNCTION(physPinToGpio);
   EXPORT_FUNCTION(setPadDrive);
   EXPORT_FUNCTION(getAlt);
-  EXPORT_FUNCTION(pwmToneWrite);
+  //EXPORT_FUNCTION(pwmToneWrite);
   EXPORT_FUNCTION(digitalWriteByte);
   EXPORT_FUNCTION(pwmSetMode);
   EXPORT_FUNCTION(pwmSetRange);
@@ -721,7 +721,7 @@ IMPLEMENT_EXPORT_INIT(wiringPi) {
   EXPORT_CONSTANT_INT(PWM_OUTPUT);
   EXPORT_CONSTANT_INT(GPIO_CLOCK);
   EXPORT_CONSTANT_INT(SOFT_PWM_OUTPUT);
-  EXPORT_CONSTANT_INT(SOFT_TONE_OUTPUT);
+  //EXPORT_CONSTANT_INT(SOFT_TONE_OUTPUT);
 
   // pullUpDnControl
   EXPORT_CONSTANT_INT(PUD_OFF);
@@ -735,14 +735,13 @@ IMPLEMENT_EXPORT_INIT(wiringPi) {
   // pwmSetMode
   EXPORT_CONSTANT_INT(PWM_MODE_BAL);
   EXPORT_CONSTANT_INT(PWM_MODE_MS);
-
-  EXPORT_CONSTANT_INT(PI_MODEL_UNKNOWN);
+  
+  /*EXPORT_CONSTANT_INT(PI_MODEL_UNKNOWN);
   EXPORT_CONSTANT_INT(PI_MODEL_A);
   EXPORT_CONSTANT_INT(PI_MODEL_B);
   EXPORT_CONSTANT_INT(PI_MODEL_BP);
   EXPORT_CONSTANT_INT(PI_MODEL_CM);
-  EXPORT_CONSTANT_INT(PI_MODEL_AP);
-  EXPORT_CONSTANT_INT(PI_MODEL_2);
+  EXPORT_CONSTANT_INT(PI_MODEL_BPR);
 
   EXPORT_CONSTANT_INT(PI_VERSION_UNKNOWN);
   EXPORT_CONSTANT_INT(PI_VERSION_1);
@@ -754,11 +753,11 @@ IMPLEMENT_EXPORT_INIT(wiringPi) {
   EXPORT_CONSTANT_INT(PI_MAKER_EGOMAN);
   EXPORT_CONSTANT_INT(PI_MAKER_SONY);
   EXPORT_CONSTANT_INT(PI_MAKER_QISDA);
-  EXPORT_CONSTANT_INT(PI_MAKER_MBEST);
+  EXPORT_CONSTANT_INT(PI_MAKER_LEMAKER);
 
-  EXPORT_CONSTANT_STRING_ARRAY(PI_MODEL_NAMES, piModelNames, 7);
+  EXPORT_CONSTANT_STRING_ARRAY(PI_MODEL_NAMES, piModelNames, 6);
   EXPORT_CONSTANT_STRING_ARRAY(PI_REVISION_NAMES, piRevisionNames, 5);
-  EXPORT_CONSTANT_STRING_ARRAY(PI_MAKER_NAMES, piMakerNames, 5);
+  EXPORT_CONSTANT_STRING_ARRAY(PI_MAKER_NAMES, piMakerNames, 5);*/
 
   EXPORT_CONSTANT_INT(FSEL_INPT);
   EXPORT_CONSTANT_INT(FSEL_OUTP);

@@ -4,7 +4,7 @@
 DECLARE(wiringPiSPIGetFd);
 DECLARE(wiringPiSPIDataRW);
 DECLARE(wiringPiSPISetup);
-DECLARE(wiringPiSPISetupMode);
+//DECLARE(wiringPiSPISetupMode);
 
 // Func : int wiringPiSPIGetFd(int channel)
 
@@ -73,7 +73,7 @@ IMPLEMENT(wiringPiSPISetup) {
   SCOPE_CLOSE(INT32(res));
 }
 
-IMPLEMENT(wiringPiSPISetupMode) {
+/*IMPLEMENT(wiringPiSPISetupMode) {
   SCOPE_OPEN();
   
   SET_ARGUMENT_NAME(0, channel);
@@ -96,11 +96,11 @@ IMPLEMENT(wiringPiSPISetupMode) {
   int res = ::wiringPiSPISetupMode(channel, speed, mode);
   
   SCOPE_CLOSE(INT32(res));
-}
+}*/
 
 IMPLEMENT_EXPORT_INIT(wiringPiSPI) {
   EXPORT_FUNCTION(wiringPiSPIGetFd);
   EXPORT_FUNCTION(wiringPiSPIDataRW);
   EXPORT_FUNCTION(wiringPiSPISetup);
-  EXPORT_FUNCTION(wiringPiSPISetupMode);
+  //EXPORT_FUNCTION(wiringPiSPISetupMode);
 }

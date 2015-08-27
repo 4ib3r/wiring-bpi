@@ -1,7 +1,7 @@
 {
   "name": "wiring-pi",
   "version": "2.1.0",
-  "description": "Bindings to wiringPi",
+  "description": "Bindings to WiringBP",
   "main": "lib/exports.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -12,12 +12,11 @@
     "url": "git@github.com:eugeneware/wiring-pi.git"
   },
   "keywords": [
-    "wiringPi",
+    "wiringBP",
     "gpio",
-    "raspberry",
+    "banana",
     "pi",
-    "raspberrypi",
-    "bcm2835"
+    "bananapi"
   ],
   "author": "Igor Soarez <igorsoarez@gmail.com>",
   "contributors": [

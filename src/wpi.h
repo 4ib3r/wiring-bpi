@@ -3,8 +3,8 @@
 
   #include "wiringPi.h"
   #include "softPwm.h"
-  #include "softServo.h"
-  #include "softTone.h"
+  //#include "softServo.h"
+  //#include "softTone.h"
   #include "wiringPiI2C.h"
   #include "wiringPiSPI.h"
   #include "wiringSerial.h"

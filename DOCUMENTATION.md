@@ -48,7 +48,7 @@
 # Install
 
 ```
-npm install wiring-pi
+npm install wiring-bpi
 ```
 
 ---
@@ -56,7 +56,7 @@ npm install wiring-pi
 # Usage
 
 ```javascript
-var wpi = require('wiring-pi');
+var wpi = require('wiring-bpi');
 ```
 
 ---
@@ -333,9 +333,9 @@ wpi.wiringPiISR(7, wpi.INT_EDGE_FALLING, function(delta) {
 
 ---
 
-## Raspberry Pi hardware specific functions
+## (NOT IMPLEMENTED) Raspberry Pi hardware specific functions
 
-### piBoardRev()
+### (NOT IMPLEMENTED)  piBoardRev()
 <span class="api-info"><code> >= 0.1.1 </code></span>
 
 This returns the board revision of the Raspberry Pi.
@@ -344,7 +344,7 @@ It will be either 1 or 2.
 
 Some of the BCM_GPIO pins changed number and function when moving from board revision 1 to 2, so if you are using BCM_GPIO pin numbers, then you need to be aware of the differences.
 
-### piBoardId()
+### (NOT IMPLEMENTED)  piBoardId()
 <span class="api-info"><code> >= 1.1.0 </code></span>
 
 Do more digging into the board revision string as above, but return as much details as we can.
@@ -464,7 +464,7 @@ This sets the divisor for the PWM clock.
 
 **NOTE: The PWM control functions can not be used when in Sys mode. To understand more about the PWM system, you’ll need to read the Broadcom ARM peripherals manual.**
 
-### pwmToneWrite(pin, frequency)
+### (NOT IMPLEMENTED)  pwmToneWrite(pin, frequency)
 <span class="api-info"><code> >= 2.0.0 </code></span>
 
 Output the given frequency on the Pi's PWM pin
@@ -559,7 +559,7 @@ The returned value is the Linux file-descriptor for the device, or -1 on error.
 
 If an error has happened, you may use the standard errno global variable to see why.
 
-### wiringPiSPISetupMode(channel, speed, mode)
+### (NOT IMPLEMENTED)  wiringPiSPISetupMode(channel, speed, mode)
 <span class="apt-info"><code> >= 2.1.0 </code></span>
 
 ---
@@ -676,19 +676,19 @@ The value is checked to be in-range and pins that haven’t previously been init
 
 ---
 
-## Soft Servo
+## (NOT IMPLEMENTED)  Soft Servo
 
-### softServoWrite(pin, value)
+### (NOT IMPLEMENTED)  softServoWrite(pin, value)
 <span class="api-info"><code> >= 1.0.0 </code></span>
 
-### softServoSetup(p0, p1, p2, p3, p4, p5, p6, p7)
+### (NOT IMPLEMENTED)  softServoSetup(p0, p1, p2, p3, p4, p5, p6, p7)
 <span class="api-info"><code> >= 1.0.0 </code></span>
 
 ---
 
-## Soft Tone
+## (NOT IMPLEMENTED)  Soft Tone
 
-### softToneCreate(pin);
+###  (NOT IMPLEMENTED) softToneCreate(pin);
 <span class="api-info"><code> >= 1.0.0 </code></span>
 
 This creates a software controlled tone pin.
@@ -703,14 +703,14 @@ Anything else and you should check the global errno variable to see what went wr
 
 **NOTE: You need to keep your program running to maintain the sound output!**
 
-### softToneWrite(pin, frequency);
+### (NOT IMPLEMENTED)  softToneWrite(pin, frequency);
 <span class="api-info"><code> >= 1.0.0 </code></span>
 
 This updates the tone frequency value on the given pin.
 
 The tone will be played until you set the frequency to 0.
 
-### softToneStop(pin);
+### (NOT IMPLEMENTED)  softToneStop(pin);
 <span class="api-info"><code> >= 1.1.0 </code></span>
 
 ---
@@ -1115,7 +1115,7 @@ You can use the constants:
 #### readNesJoystick(joystick)
 <span class="api-info"><code> >= 2.0.0 </code></span>
 
-### tcs34725
+###  (NOT IMPLEMENTED) tcs34725
 
 Color light-to-digital converter with IR filter
 
