@@ -1,15 +1,14 @@
 {
-  "name": "wiring-pi",
-  "version": "2.1.0",
+  "name": "wiring-banana",
+  "version": "1.0.0",
   "description": "Bindings to WiringBP",
   "main": "lib/exports.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "install": "/bin/bash ./install.sh"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:eugeneware/wiring-pi.git"
+    "url": "git@github.com:4ib3r/wiring-bpi.git"
   },
   "keywords": [
     "wiringBP",
@@ -21,7 +20,8 @@
   "author": "Igor Soarez <igorsoarez@gmail.com>",
   "contributors": [
     "Leandre Gohy <leandre.gohy@hexeo.be>",
-    "Eugene Ware <eugene@noblesamurai.com>"
+    "Eugene Ware <eugene@noblesamurai.com>",
+    "Adrian Sławiński <adrian.slawinski@javadevelopers.pl"
   ],
   "license": "BSD"
 }
