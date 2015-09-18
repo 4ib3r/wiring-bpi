@@ -49,8 +49,8 @@ check_git_clone
 #check_git_clone
 echo "done."
 
-patch ./WiringBP/devLib/Makefile < ./patchs/devLib_Makefile.patch
-patch ./WiringBP/gpio/Makefile < ./patchs/gpio_Makefile.patch
+#patch ./WiringBP/devLib/Makefile < ./patchs/devLib_Makefile.patch
+#patch ./WiringBP/gpio/Makefile < ./patchs/gpio_Makefile.patch
 
 echo -n "Making libWiringPi ... "
 cd ./WiringBP/wiringPi/
@@ -79,11 +79,11 @@ make >> ../../install.log 2>&1
 check_make_ok "gpio utility" 0
 echo "done."
 
-echo -n "Installing gpio utility ... "
-sudo make install >> ../../install.log 2>&1
-check_make_ok "gpio utility" 0
-cd ../../
-echo "done."
+#echo -n "Installing gpio utility ... "
+#sudo make install >> ../../install.log 2>&1
+#check_make_ok "gpio utility" 0
+#cd ../../
+#echo "done."
 
 echo -n "Making wiring-pi ... "
 node-gyp rebuild 2>&1 | tee -a ./install.log

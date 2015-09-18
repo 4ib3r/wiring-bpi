@@ -42,9 +42,16 @@
         'src/devlib/piGlow.cc',
         'src/devlib/piNes.cc',
       ],
+      'include_dirs': [
+        'WiringBP/wiringPi',
+        'WiringBP/devLib'
+      ],
+      'libraries': [
+        '<!(pwd)/WiringBP/wiringPi/libwiringPi.a',
+        '<!(pwd)/WiringBP/devLib/libwiringPiDev.a'
+      ],
       'cflags': [
-        '-Wall',
-         '-lwiringPi'
+        '-Wall'
       ]
     }
   ]
